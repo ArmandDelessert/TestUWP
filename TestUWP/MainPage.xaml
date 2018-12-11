@@ -5,9 +5,30 @@
     xmlns:local="using:TestUWP"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
+    xmlns:behaviors="using:Microsoft.Toolkit.Uwp.UI.Animations.Behaviors"
+    xmlns:core="using:Microsoft.Xaml.Interactions.Core"
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+        <StackPanel VerticalAlignment="Bottom" Margin="8,8,8,8">
+
+            <!--
+            <interactivity:Interaction.Behaviors>
+                <behaviors:Blur x:Name="BlurBehavior" Value="25" Duration="0" 
+                              Delay="0" AutomaticallyStart="True"/>
+            </interactivity:Interaction.Behaviors>
+            -->
+
+            <TextBlock Name="ScreenInfosTitle" x:Uid="ScreenInfosTitle" FontSize="20" Margin="4,8,4,4" />
+            <TextBlock Name="ScreenInfos" x:Uid="ScreenInfos" Margin="4,0,4,0" />
+            <TextBlock Name="NetworkInfosTitle" x:Uid="NetworkInfosTitle" FontSize="20" Margin="4,8,4,4" />
+            <TextBlock Name="NetworkInfos" x:Uid="NetworkInfos" Margin="4,0,4,0" />
+            <TextBlock Name="OtherInfosTitle" x:Uid="OtherInfosTitle" FontSize="20" Margin="4,8,4,4" />
+            <TextBlock Name="OtherInfos" x:Uid="OtherInfos" Margin="4,0,4,0" />
+
+        </StackPanel>
 
     </Grid>
 </Page>
