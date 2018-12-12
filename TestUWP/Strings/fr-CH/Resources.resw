@@ -123,23 +123,38 @@
   <data name="NetworkInfos_IsAvailable.Text" xml:space="preserve">
     <value>Connexion réseau disponible : </value>
   </data>
-  <data name="NetworkInfos_StartDate.Text" xml:space="preserve">
-    <value>Date de démarrage du système : </value>
-  </data>
-  <data name="NetworkInfos_TimeElapsedSinceStart.Text" xml:space="preserve">
-    <value>Temps écoulé depuis le démarrage du système : </value>
-  </data>
   <data name="OtherInfosTitle.Text" xml:space="preserve">
     <value>Autres infos</value>
+  </data>
+  <data name="Other_SystemStartDate.Text" xml:space="preserve">
+    <value>Date de démarrage du système : </value>
+  </data>
+  <data name="Other_TimeElapsedSinceAppStart.Text" xml:space="preserve">
+    <value>Temps écoulé depuis le démarrage de l'application : </value>
+  </data>
+  <data name="Other_TimeElapsedSinceSystemStart.Text" xml:space="preserve">
+    <value>Temps écoulé depuis le démarrage du système : </value>
+  </data>
+  <data name="PlatformInfosTitle.Text" xml:space="preserve">
+    <value>Infos platforme</value>
+  </data>
+  <data name="PlatformInfos_OSArchitecture.Text" xml:space="preserve">
+    <value>Architecture du système d'exploitation : </value>
+  </data>
+  <data name="PlatformInfos_OSDescription.Text" xml:space="preserve">
+    <value>Description du système d'exploitation : </value>
+  </data>
+  <data name="PlatformInfos_OSPlatform.Text" xml:space="preserve">
+    <value>Système d'exploitation : </value>
   </data>
   <data name="ScreenInfosTitle.Text" xml:space="preserve">
     <value>Infos écran</value>
   </data>
+  <data name="ScreenInfos_CurrentOrientation.Text" xml:space="preserve">
+    <value>Orientation actuelle de l'écran : </value>
+  </data>
   <data name="ScreenInfos_NativeOrientation.Text" xml:space="preserve">
     <value>Orientation native de l'écran : </value>
-  </data>
-  <data name="ScreenInfos_Orientation.Text" xml:space="preserve">
-    <value>Orientation actuelle de l'écran : </value>
   </data>
   <data name="ScreenInfos_PpiX.Text" xml:space="preserve">
     <value>Pixel par pouce (ppp) en X : </value>
@@ -152,5 +167,29 @@
   </data>
   <data name="ScreenInfos_Size.Text" xml:space="preserve">
     <value>Taille de l'écran (pixels) : </value>
+  </data>
+  <data name="ToolkitUWP_AvailableMemory.Text" xml:space="preserve">
+    <value>Quantité de mémoire RAM disponible : </value>
+  </data>
+  <data name="ToolkitUWP_DeviceFamily.Text" xml:space="preserve">
+    <value>Famille d'appareil : </value>
+  </data>
+  <data name="ToolkitUWP_DeviceManufacturer.Text" xml:space="preserve">
+    <value>Fabricant de l'appareil : </value>
+  </data>
+  <data name="ToolkitUWP_DeviceModel.Text" xml:space="preserve">
+    <value>Modèle de l'appareil : </value>
+  </data>
+  <data name="ToolkitUWP_NumberProcessorCore.Text" xml:space="preserve">
+    <value>Nombre de cœur(s) du processeur : </value>
+  </data>
+  <data name="ToolkitUWP_OperatingSystem.Text" xml:space="preserve">
+    <value>Système d'exploitation : </value>
+  </data>
+  <data name="ToolkitUWP_OperatingSystemArchitecture.Text" xml:space="preserve">
+    <value>Architecture du système d'exploitation : </value>
+  </data>
+  <data name="ToolkitUWP_OperatingSystemVersion.Text" xml:space="preserve">
+    <value>Version du système d'exploitation : </value>
   </data>
 </root>

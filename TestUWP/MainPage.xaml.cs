@@ -1,10 +1,12 @@
 ﻿//using Microsoft.Toolkit.Uwp.UI.Animations;
+using Microsoft.Toolkit.Uwp.Helpers;
 using System;
 using System.Net.NetworkInformation;
 using System.Runtime.InteropServices;
 using Windows.ApplicationModel.Resources;
 using Windows.Foundation;
 using Windows.Graphics.Display;
+using Windows.System;
 using Windows.UI.Xaml.Controls;
 
 // Pour plus d'informations sur le modèle d'élément Page vierge, consultez la page https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
@@ -20,20 +22,42 @@ namespace TestUWP
         {
             this.InitializeComponent();
 
+            ResourceLoader rl = ResourceLoader.GetForCurrentView();
+
             // Infos système d'exploitation
-            string caca;
-            if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
-            {
-                caca = "Yes";
-            }
-            else
-            {
-                caca = "No";
-            }
+            PlatformInfos.Text += Environment.NewLine +
+                rl.GetString("PlatformInfos_OSPlatform/Text") +
+                (RuntimeInformation.IsOSPlatform(OSPlatform.Windows) ? OSPlatform.Windows.ToString() :
+                RuntimeInformation.IsOSPlatform(OSPlatform.OSX) ? OSPlatform.OSX.ToString() :
+                RuntimeInformation.IsOSPlatform(OSPlatform.Linux) ? OSPlatform.Linux.ToString() :
+                "Unknown");
 
-            //var osVersion = Environment.OSVersion;
+            PlatformInfos.Text += Environment.NewLine +
+                rl.GetString("PlatformInfos_OSDescription/Text") + RuntimeInformation.OSDescription;
 
-            // Infos hardware
+            PlatformInfos.Text += Environment.NewLine +
+                rl.GetString("PlatformInfos_OSArchitecture/Text") + RuntimeInformation.OSArchitecture;
+
+            // Infos OS UWP Toolkit
+            PlatformInfos.Text += Environment.NewLine +
+                rl.GetString("ToolkitUWP_OperatingSystem/Text") + SystemInformation.OperatingSystem;
+            PlatformInfos.Text += Environment.NewLine +
+                rl.GetString("ToolkitUWP_OperatingSystemVersion/Text") + SystemInformation.OperatingSystemVersion;
+            PlatformInfos.Text += Environment.NewLine +
+                rl.GetString("ToolkitUWP_OperatingSystemArchitecture/Text") + SystemInformation.OperatingSystemArchitecture;
+            PlatformInfos.Text += Environment.NewLine +
+                rl.GetString("ToolkitUWP_DeviceFamily/Text") + SystemInformation.DeviceFamily;
+
+            // Infos hardware UWP Toolkit
+            PlatformInfos.Text += Environment.NewLine +
+                rl.GetString("ToolkitUWP_NumberProcessorCore/Text") + 4;
+            PlatformInfos.Text += Environment.NewLine +
+                rl.GetString("ToolkitUWP_AvailableMemory/Text") + SystemInformation.AvailableMemory;
+            PlatformInfos.Text += Environment.NewLine +
+                rl.GetString("ToolkitUWP_DeviceManufacturer/Text") + SystemInformation.DeviceManufacturer;
+            PlatformInfos.Text += Environment.NewLine +
+                rl.GetString("ToolkitUWP_DeviceModel/Text") + SystemInformation.DeviceModel;
+
 
             // Récupération des informations sur l'écran
             Size screenSize_Pixels = new Size
@@ -49,8 +73,6 @@ namespace TestUWP
             ResolutionScale resolutionScale = DisplayInformation.GetForCurrentView().ResolutionScale;
             DisplayOrientations displayNativeOrientation = DisplayInformation.GetForCurrentView().NativeOrientation;
             DisplayOrientations displayCurrentOrientation = DisplayInformation.GetForCurrentView().CurrentOrientation;
-
-            ResourceLoader rl = ResourceLoader.GetForCurrentView();
 
             ScreenInfos.Text = rl.GetString("ScreenInfos_Size/Text") + screenSize_Pixels.Width + " × " + screenSize_Pixels.Height;
             ScreenInfos.Text +=
@@ -75,11 +97,14 @@ namespace TestUWP
             DateTime startDate = DateTime.Now - timeSpendSinceStart; // Année, mois, jours, heures, minutes, secondes, millisecondes
 
             OtherInfos.Text =
-                rl.GetString("NetworkInfos_StartDate/Text") +
+                rl.GetString("Other_SystemStartDate/Text") +
                 startDate +
                 Environment.NewLine +
-                rl.GetString("NetworkInfos_TimeElapsedSinceStart/Text") +
-                timeSpendSinceStart.ToString();
+                rl.GetString("Other_TimeElapsedSinceSystemStart/Text") +
+                timeSpendSinceStart.ToString() +
+                Environment.NewLine +
+                rl.GetString("Other_TimeElapsedSinceAppStart/Text") +
+                SystemInformation.AppUptime;
         }
 
         private TimeSpan getTimeSpendSinceStart()

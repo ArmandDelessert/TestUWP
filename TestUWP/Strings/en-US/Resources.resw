@@ -123,14 +123,29 @@
   <data name="NetworkInfos_IsAvailable.Text" xml:space="preserve">
     <value>Network connection available: </value>
   </data>
-  <data name="NetworkInfos_StartDate.Text" xml:space="preserve">
-    <value>System start date: </value>
-  </data>
-  <data name="NetworkInfos_TimeElapsedSinceStart.Text" xml:space="preserve">
-    <value>Elapsed time since system start: </value>
-  </data>
   <data name="OtherInfosTitle.Text" xml:space="preserve">
     <value>Other Infos</value>
+  </data>
+  <data name="Other_SystemStartDate.Text" xml:space="preserve">
+    <value>System start date: </value>
+  </data>
+  <data name="Other_TimeElapsedSinceAppStart.Text" xml:space="preserve">
+    <value>Elapsed time since app start: </value>
+  </data>
+  <data name="Other_TimeElapsedSinceSystemStart.Text" xml:space="preserve">
+    <value>Elapsed time since system start: </value>
+  </data>
+  <data name="PlatformInfosTitle.Text" xml:space="preserve">
+    <value>Platform Infos</value>
+  </data>
+  <data name="PlatformInfos_OSArchitecture.Text" xml:space="preserve">
+    <value>Operating system architecture: </value>
+  </data>
+  <data name="PlatformInfos_OSDescription.Text" xml:space="preserve">
+    <value>Operating system description: </value>
+  </data>
+  <data name="PlatformInfos_OSPlatform.Text" xml:space="preserve">
+    <value>Operating system: </value>
   </data>
   <data name="ScreenInfosTitle.Text" xml:space="preserve">
     <value>Screen Infos</value>
@@ -152,5 +167,29 @@
   </data>
   <data name="ScreenInfos_Size.Text" xml:space="preserve">
     <value>Screen size (pixels): </value>
+  </data>
+  <data name="ToolkitUWP_AvailableMemory.Text" xml:space="preserve">
+    <value>Amount of available memory: </value>
+  </data>
+  <data name="ToolkitUWP_DeviceFamily.Text" xml:space="preserve">
+    <value>Device family: </value>
+  </data>
+  <data name="ToolkitUWP_DeviceManufacturer.Text" xml:space="preserve">
+    <value>Device manufacturer: </value>
+  </data>
+  <data name="ToolkitUWP_DeviceModel.Text" xml:space="preserve">
+    <value>Device model: </value>
+  </data>
+  <data name="ToolkitUWP_NumberProcessorCore.Text" xml:space="preserve">
+    <value>Number of processor core: </value>
+  </data>
+  <data name="ToolkitUWP_OperatingSystem.Text" xml:space="preserve">
+    <value>Operating system: </value>
+  </data>
+  <data name="ToolkitUWP_OperatingSystemArchitecture.Text" xml:space="preserve">
+    <value>Operating system architecture: </value>
+  </data>
+  <data name="ToolkitUWP_OperatingSystemVersion.Text" xml:space="preserve">
+    <value>Operating system version: </value>
   </data>
 </root>
