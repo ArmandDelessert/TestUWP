@@ -6,11 +6,8 @@ using System.Runtime.InteropServices;
 using Windows.ApplicationModel.Resources;
 using Windows.Foundation;
 using Windows.Graphics.Display;
-using Windows.System;
 using Windows.System.Diagnostics;
 using Windows.UI.Xaml.Controls;
-
-// Pour plus d'informations sur le modèle d'élément Page vierge, consultez la page https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
 namespace TestUWP
 {
@@ -55,7 +52,7 @@ namespace TestUWP
 
             // Infos hardware UWP Toolkit
             PlatformInfos.Text += Environment.NewLine +
-                rl.GetString("ToolkitUWP_Is64BitProcessor/Text") + Environment.Is64BitProcess; ;
+                rl.GetString("ToolkitUWP_Is64BitProcessor/Text") + Environment.Is64BitProcess;
             PlatformInfos.Text += Environment.NewLine +
                 rl.GetString("ToolkitUWP_NumberProcessorCore/Text") + Environment.ProcessorCount;
             PlatformInfos.Text += Environment.NewLine +
@@ -66,6 +63,8 @@ namespace TestUWP
                 rl.GetString("ToolkitUWP_DeviceManufacturer/Text") + SystemInformation.DeviceManufacturer;
             PlatformInfos.Text += Environment.NewLine +
                 rl.GetString("ToolkitUWP_DeviceModel/Text") + SystemInformation.DeviceModel;
+
+            // Diagnostique du processus
 
             PlatformInfos.Text += Environment.NewLine +
                 rl.GetString("ResourcesUsage/Text") + ProcessDiagnosticInfo.GetForCurrentProcess().CpuUsage.GetReport();
