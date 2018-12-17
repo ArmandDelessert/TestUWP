@@ -123,16 +123,16 @@
   <data name="NetworkInfos_IsAvailable.Text" xml:space="preserve">
     <value>Connexion réseau disponible : </value>
   </data>
-  <data name="OtherInfosTitle.Text" xml:space="preserve">
+  <data name="OthersInfosTitle.Text" xml:space="preserve">
     <value>Autres infos</value>
   </data>
-  <data name="Other_SystemStartDate.Text" xml:space="preserve">
+  <data name="Others_SystemStartDate.Text" xml:space="preserve">
     <value>Date de démarrage du système : </value>
   </data>
-  <data name="Other_TimeElapsedSinceAppStart.Text" xml:space="preserve">
+  <data name="Others_TimeElapsedSinceAppStart.Text" xml:space="preserve">
     <value>Temps écoulé depuis le démarrage de l'application : </value>
   </data>
-  <data name="Other_TimeElapsedSinceSystemStart.Text" xml:space="preserve">
+  <data name="Others_TimeElapsedSinceSystemStart.Text" xml:space="preserve">
     <value>Temps écoulé depuis le démarrage du système : </value>
   </data>
   <data name="PlatformInfosTitle.Text" xml:space="preserve">
@@ -146,6 +146,9 @@
   </data>
   <data name="PlatformInfos_OSPlatform.Text" xml:space="preserve">
     <value>Système d'exploitation : </value>
+  </data>
+  <data name="ResourcesUsage.Text" xml:space="preserve">
+    <value>Utilisation des ressources : </value>
   </data>
   <data name="ScreenInfosTitle.Text" xml:space="preserve">
     <value>Infos écran</value>
@@ -169,7 +172,7 @@
     <value>Taille de l'écran (pixels) : </value>
   </data>
   <data name="ToolkitUWP_AvailableMemory.Text" xml:space="preserve">
-    <value>Quantité de mémoire RAM disponible : </value>
+    <value>Quantité de mémoire RAM disponible pour cette application : </value>
   </data>
   <data name="ToolkitUWP_DeviceFamily.Text" xml:space="preserve">
     <value>Famille d'appareil : </value>
@@ -179,6 +182,15 @@
   </data>
   <data name="ToolkitUWP_DeviceModel.Text" xml:space="preserve">
     <value>Modèle de l'appareil : </value>
+  </data>
+  <data name="ToolkitUWP_Is64BitOperatingSystem.Text" xml:space="preserve">
+    <value>Système d'exploitation 64 bits : </value>
+  </data>
+  <data name="ToolkitUWP_Is64BitProcessor.Text" xml:space="preserve">
+    <value>Processeur 64 bits : </value>
+  </data>
+  <data name="ToolkitUWP_MachineName.Text" xml:space="preserve">
+    <value>Nom NetBIOS de la machine : </value>
   </data>
   <data name="ToolkitUWP_NumberProcessorCore.Text" xml:space="preserve">
     <value>Nombre de cœur(s) du processeur : </value>

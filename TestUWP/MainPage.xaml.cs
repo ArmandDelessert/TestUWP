@@ -7,6 +7,7 @@ using Windows.ApplicationModel.Resources;
 using Windows.Foundation;
 using Windows.Graphics.Display;
 using Windows.System;
+using Windows.System.Diagnostics;
 using Windows.UI.Xaml.Controls;
 
 // Pour plus d'informations sur le modèle d'élément Page vierge, consultez la page https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
@@ -42,22 +43,36 @@ namespace TestUWP
             PlatformInfos.Text += Environment.NewLine +
                 rl.GetString("ToolkitUWP_OperatingSystem/Text") + SystemInformation.OperatingSystem;
             PlatformInfos.Text += Environment.NewLine +
-                rl.GetString("ToolkitUWP_OperatingSystemVersion/Text") + SystemInformation.OperatingSystemVersion;
+                rl.GetString("ToolkitUWP_OperatingSystemVersion/Text") +
+                SystemInformation.OperatingSystemVersion + " (from SystemInformation) ; " +
+                Environment.OSVersion + " (from Environment)";
             PlatformInfos.Text += Environment.NewLine +
                 rl.GetString("ToolkitUWP_OperatingSystemArchitecture/Text") + SystemInformation.OperatingSystemArchitecture;
+            PlatformInfos.Text += Environment.NewLine +
+                rl.GetString("ToolkitUWP_Is64BitOperatingSystem/Text") + Environment.Is64BitOperatingSystem;
             PlatformInfos.Text += Environment.NewLine +
                 rl.GetString("ToolkitUWP_DeviceFamily/Text") + SystemInformation.DeviceFamily;
 
             // Infos hardware UWP Toolkit
             PlatformInfos.Text += Environment.NewLine +
-                rl.GetString("ToolkitUWP_NumberProcessorCore/Text") + 4;
+                rl.GetString("ToolkitUWP_Is64BitProcessor/Text") + Environment.Is64BitProcess; ;
             PlatformInfos.Text += Environment.NewLine +
-                rl.GetString("ToolkitUWP_AvailableMemory/Text") + SystemInformation.AvailableMemory;
+                rl.GetString("ToolkitUWP_NumberProcessorCore/Text") + Environment.ProcessorCount;
+            PlatformInfos.Text += Environment.NewLine +
+                rl.GetString("ToolkitUWP_AvailableMemory/Text") + SystemInformation.AvailableMemory + " MB";
+            PlatformInfos.Text += Environment.NewLine +
+                rl.GetString("ToolkitUWP_MachineName/Text") + Environment.MachineName;
             PlatformInfos.Text += Environment.NewLine +
                 rl.GetString("ToolkitUWP_DeviceManufacturer/Text") + SystemInformation.DeviceManufacturer;
             PlatformInfos.Text += Environment.NewLine +
                 rl.GetString("ToolkitUWP_DeviceModel/Text") + SystemInformation.DeviceModel;
 
+            PlatformInfos.Text += Environment.NewLine +
+                rl.GetString("ResourcesUsage/Text") + ProcessDiagnosticInfo.GetForCurrentProcess().CpuUsage.GetReport();
+            PlatformInfos.Text += Environment.NewLine +
+                rl.GetString("ResourcesUsage/Text") + ProcessDiagnosticInfo.GetForCurrentProcess().MemoryUsage.GetReport();
+            PlatformInfos.Text += Environment.NewLine +
+                rl.GetString("ResourcesUsage/Text") + ProcessDiagnosticInfo.GetForCurrentProcess().DiskUsage.GetReport();
 
             // Récupération des informations sur l'écran
             Size screenSize_Pixels = new Size
@@ -96,14 +111,14 @@ namespace TestUWP
             TimeSpan timeSpendSinceStart = getTimeSpendSinceStart(); // Jours, heures, minutes, secondes, millisecondes
             DateTime startDate = DateTime.Now - timeSpendSinceStart; // Année, mois, jours, heures, minutes, secondes, millisecondes
 
-            OtherInfos.Text =
-                rl.GetString("Other_SystemStartDate/Text") +
+            OthersInfos.Text =
+                rl.GetString("Others_SystemStartDate/Text") +
                 startDate +
                 Environment.NewLine +
-                rl.GetString("Other_TimeElapsedSinceSystemStart/Text") +
+                rl.GetString("Others_TimeElapsedSinceSystemStart/Text") +
                 timeSpendSinceStart.ToString() +
                 Environment.NewLine +
-                rl.GetString("Other_TimeElapsedSinceAppStart/Text") +
+                rl.GetString("Others_TimeElapsedSinceAppStart/Text") +
                 SystemInformation.AppUptime;
         }
 
@@ -112,7 +127,7 @@ namespace TestUWP
             return new TimeSpan(0, 0, 0, 0, Environment.TickCount); // Jours, heures, minutes, secondes, millisecondes
         }
 
-        private String timeSpendSinceStart_String()
+        private string timeSpendSinceStart_String()
         {
             TimeSpan t = getTimeSpendSinceStart();
 

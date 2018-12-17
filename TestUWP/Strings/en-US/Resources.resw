@@ -123,16 +123,16 @@
   <data name="NetworkInfos_IsAvailable.Text" xml:space="preserve">
     <value>Network connection available: </value>
   </data>
-  <data name="OtherInfosTitle.Text" xml:space="preserve">
-    <value>Other Infos</value>
+  <data name="OthersInfosTitle.Text" xml:space="preserve">
+    <value>Others Infos</value>
   </data>
-  <data name="Other_SystemStartDate.Text" xml:space="preserve">
+  <data name="Others_SystemStartDate.Text" xml:space="preserve">
     <value>System start date: </value>
   </data>
-  <data name="Other_TimeElapsedSinceAppStart.Text" xml:space="preserve">
+  <data name="Others_TimeElapsedSinceAppStart.Text" xml:space="preserve">
     <value>Elapsed time since app start: </value>
   </data>
-  <data name="Other_TimeElapsedSinceSystemStart.Text" xml:space="preserve">
+  <data name="Others_TimeElapsedSinceSystemStart.Text" xml:space="preserve">
     <value>Elapsed time since system start: </value>
   </data>
   <data name="PlatformInfosTitle.Text" xml:space="preserve">
@@ -146,6 +146,9 @@
   </data>
   <data name="PlatformInfos_OSPlatform.Text" xml:space="preserve">
     <value>Operating system: </value>
+  </data>
+  <data name="ResourcesUsage.Text" xml:space="preserve">
+    <value>Resources usage: </value>
   </data>
   <data name="ScreenInfosTitle.Text" xml:space="preserve">
     <value>Screen Infos</value>
@@ -169,7 +172,7 @@
     <value>Screen size (pixels): </value>
   </data>
   <data name="ToolkitUWP_AvailableMemory.Text" xml:space="preserve">
-    <value>Amount of available memory: </value>
+    <value>Amount of available memory for this application: </value>
   </data>
   <data name="ToolkitUWP_DeviceFamily.Text" xml:space="preserve">
     <value>Device family: </value>
@@ -179,6 +182,15 @@
   </data>
   <data name="ToolkitUWP_DeviceModel.Text" xml:space="preserve">
     <value>Device model: </value>
+  </data>
+  <data name="ToolkitUWP_Is64BitOperatingSystem.Text" xml:space="preserve">
+    <value>64 bit operating system: </value>
+  </data>
+  <data name="ToolkitUWP_Is64BitProcessor.Text" xml:space="preserve">
+    <value>64 bit processor: </value>
+  </data>
+  <data name="ToolkitUWP_MachineName.Text" xml:space="preserve">
+    <value>Machine NetBIOS name: </value>
   </data>
   <data name="ToolkitUWP_NumberProcessorCore.Text" xml:space="preserve">
     <value>Number of processor core: </value>

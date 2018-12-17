@@ -11,28 +11,54 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Border x:Name="EffectElement">
+            <interactivity:Interaction.Behaviors>
+                <behaviors:Blur x:Name="BlurBehavior"
+                    Value="25"
+                    Duration="0"
+                    Delay="0"
+                    AutomaticallyStart="True"/>
+            </interactivity:Interaction.Behaviors>
+        </Border>
 
-        <Border BorderBrush="Gray" BorderThickness="1">
+        <Pivot Title="Some infos…">
+            <PivotItem Header="Platform Infos">
+                <TextBlock Name="PlatformInfos" x:Uid="PlatformInfos" Margin="4,0,4,0"/>
+            </PivotItem>
+            <PivotItem Header="Screen Infos">
+                <TextBlock Name="ScreenInfos" x:Uid="ScreenInfos" Margin="4,0,4,0"/>
+            </PivotItem>
+            <PivotItem Header="Network Infos">
+                <TextBlock Name="NetworkInfos" x:Uid="NetworkInfos" Margin="4,0,4,0"/>
+            </PivotItem>
+            <PivotItem Header="Others Infos">
+                <TextBlock Name="OthersInfos" x:Uid="OthersInfos" Margin="4,0,4,0"/>
+            </PivotItem>
+        </Pivot>
+
+        <!--
+        <Border BorderBrush="Gray" BorderThickness="10">
             <StackPanel VerticalAlignment="Bottom" Margin="8,8,8,8">
-
-                <!--
+-->
+        <!--
                 <interactivity:Interaction.Behaviors>
                     <behaviors:Blur x:Name="BlurBehavior" Value="25" Duration="0" 
                                   Delay="0" AutomaticallyStart="True"/>
                 </interactivity:Interaction.Behaviors>
                 -->
-
-                <TextBlock Name="PlatformInfosTitle" x:Uid="PlatformInfosTitle" FontSize="20" Margin="4,8,4,4" />
-                <TextBlock Name="PlatformInfos" x:Uid="PlatformInfos" Margin="4,0,4,0" />
-                <TextBlock Name="ScreenInfosTitle" x:Uid="ScreenInfosTitle" FontSize="20" Margin="4,8,4,4" />
-                <TextBlock Name="ScreenInfos" x:Uid="ScreenInfos" Margin="4,0,4,0" />
-                <TextBlock Name="NetworkInfosTitle" x:Uid="NetworkInfosTitle" FontSize="20" Margin="4,8,4,4" />
-                <TextBlock Name="NetworkInfos" x:Uid="NetworkInfos" Margin="4,0,4,0" />
-                <TextBlock Name="OtherInfosTitle" x:Uid="OtherInfosTitle" FontSize="20" Margin="4,8,4,4" />
-                <TextBlock Name="OtherInfos" x:Uid="OtherInfos" Margin="4,0,4,0" />
+        <!--
+                <TextBlock Name="PlatformInfosTitle" x:Uid="PlatformInfosTitle" FontSize="20" Margin="4,8,4,4"/>
+                
+                <TextBlock Name="ScreenInfosTitle" x:Uid="ScreenInfosTitle" FontSize="20" Margin="4,8,4,4"/>
+                
+                <TextBlock Name="NetworkInfosTitle" x:Uid="NetworkInfosTitle" FontSize="20" Margin="4,8,4,4"/>
+                
+                <TextBlock Name="OthersInfosTitle" x:Uid="OthersInfosTitle" FontSize="20" Margin="4,8,4,4"/>
+                
 
             </StackPanel>
         </Border>
+-->
 
     </Grid>
 </Page>
