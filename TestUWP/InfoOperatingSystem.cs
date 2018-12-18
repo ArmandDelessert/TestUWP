@@ -7,7 +7,7 @@ namespace TestUWP
     /// <summary>
     /// This class provides information about the operating system.
     /// </summary>
-    public static class OperatingSystemInfo
+    public static class InfoOperatingSystem
     {
         /// Infos from Microsoft.Toolkit.Uwp.Helpers.SystemInformation
         /// 

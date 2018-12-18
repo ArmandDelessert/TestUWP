@@ -7,7 +7,7 @@ namespace TestUWP
     /// <summary>
     /// This class provides information about the hardware of the machine.
     /// </summary>
-    public static class HardwareInfo
+    public static class InfoHardware
     {
         /// <summary>
         /// Gets the processor architecture from the Windows Community Toolkit.
