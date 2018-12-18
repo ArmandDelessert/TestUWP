@@ -185,6 +185,7 @@
   </data>
   <data name="ToolkitUWP_Is64BitOperatingSystem.Text" xml:space="preserve">
     <value>Système d'exploitation 64 bits : </value>
+    <comment>À supprimer (plus utilisé)</comment>
   </data>
   <data name="ToolkitUWP_Is64BitProcessor.Text" xml:space="preserve">
     <value>Processeur 64 bits : </value>
@@ -198,8 +199,15 @@
   <data name="ToolkitUWP_OperatingSystem.Text" xml:space="preserve">
     <value>Système d'exploitation : </value>
   </data>
+  <data name="ToolkitUWP_OperatingSystem64Bit.Text" xml:space="preserve">
+    <value>Système d'exploitation 64 bits</value>
+  </data>
   <data name="ToolkitUWP_OperatingSystemArchitecture.Text" xml:space="preserve">
     <value>Architecture du système d'exploitation : </value>
+    <comment>À adapter (faire une string par architecture)</comment>
+  </data>
+  <data name="ToolkitUWP_OperatingSystemNon64Bit.Text" xml:space="preserve">
+    <value>Système d'exploitation 32 bits</value>
   </data>
   <data name="ToolkitUWP_OperatingSystemVersion.Text" xml:space="preserve">
     <value>Version du système d'exploitation : </value>

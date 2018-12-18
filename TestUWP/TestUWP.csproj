@@ -96,10 +96,12 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="InfoHardware.cs" />
+    <Compile Include="InfoScreen.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="InfoOperatingSystem.cs" />
+    <Compile Include="PrintInfoOperatingSystem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

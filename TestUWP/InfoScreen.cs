@@ -3,6 +3,12 @@ using Windows.Graphics.Display;
 
 namespace TestUWP
 {
+    /// <summary>
+    /// This class provides information about the screen.
+    /// 
+    /// À ajouter :
+    /// - Plusieurs écrans ? Infos sur chacun ?
+    /// </summary>
     public static class InfoScreen
     {
         public static Size GetScreenSize()

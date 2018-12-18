@@ -7,7 +7,7 @@ namespace TestUWP
     /// <summary>
     /// This class provides information about the operating system.
     /// </summary>
-    public static class InfoOperatingSystem
+    public class InfoOperatingSystem
     {
         /// Infos from Microsoft.Toolkit.Uwp.Helpers.SystemInformation
         /// 
@@ -121,9 +121,11 @@ namespace TestUWP
 
         /// <summary>
         /// Gets the platform architecture on which the current app is running.
+        /// Possible architectures: X86, X64, Arm, Arm64
         /// 
         /// More infos:
         /// https://docs.microsoft.com/en-us/dotnet/api/system.runtime.interopservices.runtimeinformation.osarchitecture
+        /// https://docs.microsoft.com/en-us/dotnet/api/system.runtime.interopservices.architecture
         /// </summary>
         /// <returns></returns>
         public static Architecture GetOSArchitecture()

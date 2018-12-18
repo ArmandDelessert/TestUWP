@@ -22,6 +22,8 @@ namespace TestUWP
 
             ResourceLoader rl = ResourceLoader.GetForCurrentView();
 
+            PrintInfoOperatingSystem printInfoOS = new PrintInfoOperatingSystem(rl);
+
             // Infos système d'exploitation
             PlatformInfos.Text += Environment.NewLine +
                 rl.GetString("PlatformInfos_OSPlatform/Text") +
@@ -37,6 +39,13 @@ namespace TestUWP
                 rl.GetString("PlatformInfos_OSArchitecture/Text") + RuntimeInformation.OSArchitecture;
 
             // Infos OS UWP Toolkit
+            PlatformInfos.Text += Environment.NewLine + printInfoOS.PrintOperatingSystem();
+            PlatformInfos.Text += Environment.NewLine + printInfoOS.PrintOperatingSystemVersion();
+            PlatformInfos.Text += Environment.NewLine + printInfoOS.PrintOperatingSystemArchitecture();
+            PlatformInfos.Text += Environment.NewLine + printInfoOS.PrintIfOperatingSystemIs64Bit();
+            PlatformInfos.Text += Environment.NewLine + printInfoOS.PrintDeviceFamily();
+
+            /*
             PlatformInfos.Text += Environment.NewLine +
                 rl.GetString("ToolkitUWP_OperatingSystem/Text") + SystemInformation.OperatingSystem;
             PlatformInfos.Text += Environment.NewLine +
@@ -49,6 +58,7 @@ namespace TestUWP
                 rl.GetString("ToolkitUWP_Is64BitOperatingSystem/Text") + Environment.Is64BitOperatingSystem;
             PlatformInfos.Text += Environment.NewLine +
                 rl.GetString("ToolkitUWP_DeviceFamily/Text") + SystemInformation.DeviceFamily;
+            */
 
             // Infos hardware UWP Toolkit
             PlatformInfos.Text += Environment.NewLine +
@@ -105,6 +115,8 @@ namespace TestUWP
             bool isNetworkAvailable = NetworkInterface.GetIsNetworkAvailable();
 
             NetworkInfos.Text = rl.GetString("NetworkInfos_IsAvailable/Text") + isNetworkAvailable;
+
+            // Voir aussi : connexion limitée ? Type de co (Ethernet, Wi-Fi, 4G, etc.) ?
 
             // Autres infos
             TimeSpan timeSpendSinceStart = getTimeSpendSinceStart(); // Jours, heures, minutes, secondes, millisecondes
