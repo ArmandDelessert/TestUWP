@@ -78,7 +78,8 @@ namespace TestUWP
         /// <returns></returns>
         public static float GetPhysicalMemoryMapped()
         {
-            return Environment.WorkingSet;
+            //return Environment.WorkingSet;
+            return -1;
         }
 
         /// <summary>
@@ -112,7 +113,7 @@ namespace TestUWP
         /// https://docs.microsoft.com/en-us/dotnet/api/microsoft.toolkit.uwp.helpers.systeminformation.devicemodel
         /// </summary>
         /// <returns></returns>
-        public static string GtDeviceModel()
+        public static string GetDeviceModel()
         {
             return SystemInformation.DeviceModel;
         }

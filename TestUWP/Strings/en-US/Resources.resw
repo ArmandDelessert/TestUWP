@@ -117,13 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="NetworkInfosTitle.Text" xml:space="preserve">
+  <data name="InfoNetworkTitle.Text" xml:space="preserve">
     <value>Network Infos</value>
   </data>
-  <data name="NetworkInfos_IsAvailable.Text" xml:space="preserve">
+  <data name="InfoNetwork_IsAvailable.Text" xml:space="preserve">
     <value>Network connection available: </value>
   </data>
-  <data name="OthersInfosTitle.Text" xml:space="preserve">
+  <data name="InfoOthersTitle.Text" xml:space="preserve">
     <value>Others Infos</value>
   </data>
   <data name="Others_SystemStartDate.Text" xml:space="preserve">
@@ -135,73 +135,115 @@
   <data name="Others_TimeElapsedSinceSystemStart.Text" xml:space="preserve">
     <value>Elapsed time since system start: </value>
   </data>
-  <data name="PlatformInfosTitle.Text" xml:space="preserve">
+  <data name="InfoPlatformTitle.Text" xml:space="preserve">
     <value>Platform Infos</value>
   </data>
-  <data name="PlatformInfos_OSArchitecture.Text" xml:space="preserve">
+  <data name="InfoPlatform_OSArchitecture.Text" xml:space="preserve">
     <value>Operating system architecture: </value>
   </data>
-  <data name="PlatformInfos_OSDescription.Text" xml:space="preserve">
+  <data name="InfoPlatform_OSDescription.Text" xml:space="preserve">
     <value>Operating system description: </value>
   </data>
-  <data name="PlatformInfos_OSPlatform.Text" xml:space="preserve">
+  <data name="InfoPlatform_OSPlatform.Text" xml:space="preserve">
     <value>Operating system: </value>
   </data>
   <data name="ResourcesUsage.Text" xml:space="preserve">
     <value>Resources usage: </value>
   </data>
-  <data name="ScreenInfosTitle.Text" xml:space="preserve">
+  <data name="InfoScreenTitle.Text" xml:space="preserve">
     <value>Screen Infos</value>
   </data>
-  <data name="ScreenInfos_CurrentOrientation.Text" xml:space="preserve">
+  <data name="InfoScreen_CurrentOrientation.Text" xml:space="preserve">
     <value>Display current orientation: </value>
   </data>
-  <data name="ScreenInfos_NativeOrientation.Text" xml:space="preserve">
+  <data name="InfoScreen_NativeOrientation.Text" xml:space="preserve">
     <value>Display native orientation: </value>
   </data>
-  <data name="ScreenInfos_PpiX.Text" xml:space="preserve">
+  <data name="InfoScreen_PpiX.Text" xml:space="preserve">
     <value>Pixel per inch (ppi) in X: </value>
   </data>
-  <data name="ScreenInfos_PpiY.Text" xml:space="preserve">
+  <data name="InfoScreen_PpiY.Text" xml:space="preserve">
     <value>Pixel per inch (ppi) in Y: </value>
   </data>
-  <data name="ScreenInfos_Scale.Text" xml:space="preserve">
+  <data name="InfoScreen_Scale.Text" xml:space="preserve">
     <value>Resolution scale: </value>
   </data>
-  <data name="ScreenInfos_Size.Text" xml:space="preserve">
+  <data name="InfoScreen_Size.Text" xml:space="preserve">
     <value>Screen size (pixels): </value>
   </data>
-  <data name="ToolkitUWP_AvailableMemory.Text" xml:space="preserve">
+  <data name="InfoPlatform_AvailableMemory.Text" xml:space="preserve">
     <value>Amount of available memory for this application: </value>
   </data>
-  <data name="ToolkitUWP_DeviceFamily.Text" xml:space="preserve">
+  <data name="InfoPlatform_DeviceFamily.Text" xml:space="preserve">
     <value>Device family: </value>
   </data>
-  <data name="ToolkitUWP_DeviceManufacturer.Text" xml:space="preserve">
+  <data name="InfoPlatform_DeviceManufacturer.Text" xml:space="preserve">
     <value>Device manufacturer: </value>
   </data>
-  <data name="ToolkitUWP_DeviceModel.Text" xml:space="preserve">
+  <data name="InfoPlatform_DeviceModel.Text" xml:space="preserve">
     <value>Device model: </value>
   </data>
-  <data name="ToolkitUWP_Is64BitOperatingSystem.Text" xml:space="preserve">
-    <value>64 bit operating system: </value>
+  <data name="InfoPlatform_OperatingSystemIs64Bit.Text" xml:space="preserve">
+    <value>64 bit operating system</value>
   </data>
-  <data name="ToolkitUWP_Is64BitProcessor.Text" xml:space="preserve">
-    <value>64 bit processor: </value>
+  <data name="InfoPlatform_ProcessorIs64Bit.Text" xml:space="preserve">
+    <value>64 bit processor</value>
   </data>
-  <data name="ToolkitUWP_MachineName.Text" xml:space="preserve">
+  <data name="InfoPlatform_MachineName.Text" xml:space="preserve">
     <value>Machine NetBIOS name: </value>
   </data>
-  <data name="ToolkitUWP_NumberProcessorCore.Text" xml:space="preserve">
+  <data name="InfoPlatform_NumberProcessorCore.Text" xml:space="preserve">
     <value>Number of processor core: </value>
   </data>
-  <data name="ToolkitUWP_OperatingSystem.Text" xml:space="preserve">
+  <data name="InfoPlatform_OperatingSystem.Text" xml:space="preserve">
     <value>Operating system: </value>
   </data>
-  <data name="ToolkitUWP_OperatingSystemArchitecture.Text" xml:space="preserve">
+  <data name="InfoPlatform_OperatingSystemArchitecture.Text" xml:space="preserve">
     <value>Operating system architecture: </value>
   </data>
-  <data name="ToolkitUWP_OperatingSystemVersion.Text" xml:space="preserve">
+  <data name="InfoPlatform_OperatingSystemArchitecture_Arm.Text" xml:space="preserve">
+    <value>ARM 32-bit</value>
+  </data>
+  <data name="InfoPlatform_OperatingSystemArchitecture_Arm64.Text" xml:space="preserve">
+    <value>ARM 64-bit</value>
+  </data>
+  <data name="InfoPlatform_OperatingSystemArchitecture_X64.Text" xml:space="preserve">
+    <value>Intel-based 64-bit</value>
+  </data>
+  <data name="InfoPlatform_OperatingSystemArchitecture_X86.Text" xml:space="preserve">
+    <value>Intel-based 32-bit</value>
+  </data>
+  <data name="InfoPlatform_OperatingSystemVersion.Text" xml:space="preserve">
     <value>Operating system version: </value>
+  </data>
+  <data name="InfoPlatform_ProcessorArchitecture.Text" xml:space="preserve">
+    <value>Processor architecture: </value>
+  </data>
+  <data name="InfoPlatform_ProcessorArchitecture_Arm.Text" xml:space="preserve">
+    <value>ARM</value>
+  </data>
+  <data name="InfoPlatform_ProcessorArchitecture_Neutral.Text" xml:space="preserve">
+    <value>Neutral</value>
+  </data>
+  <data name="InfoPlatform_ProcessorArchitecture_Unknown.Text" xml:space="preserve">
+    <value>Unknown</value>
+  </data>
+  <data name="InfoPlatform_ProcessorArchitecture_X64.Text" xml:space="preserve">
+    <value>Intel-based 64-bit</value>
+  </data>
+  <data name="InfoPlatform_ProcessorArchitecture_X86.Text" xml:space="preserve">
+    <value>Intel-based 32-bit</value>
+  </data>
+  <data name="InfoPlatform_MemoryPageSize.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="InfoPlatform_OperatingSystemIsNot64Bit.Text" xml:space="preserve">
+    <value>32 bit operating system</value>
+  </data>
+  <data name="InfoPlatform_PhysicalMemoryMapped.Text" xml:space="preserve">
+    <value>Physical memory mapped: </value>
+  </data>
+  <data name="InfoPlatform_ProcessorIsNot64Bit.Text" xml:space="preserve">
+    <value>32 bit processor</value>
   </data>
 </root>

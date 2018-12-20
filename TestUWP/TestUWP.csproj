@@ -101,6 +101,7 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="InfoOperatingSystem.cs" />
+    <Compile Include="PrintInfoHardware.cs" />
     <Compile Include="PrintInfoOperatingSystem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -110,7 +111,6 @@
     </AppxManifest>
     <PRIResource Include="Strings\en-US\Resources.resw" />
     <PRIResource Include="Strings\fr-CH\Resources.resw" />
-    <None Include="TestUWP_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Properties\Default.rd.xml" />

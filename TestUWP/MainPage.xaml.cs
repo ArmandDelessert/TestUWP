@@ -2,7 +2,6 @@
 using Microsoft.Toolkit.Uwp.Helpers;
 using System;
 using System.Net.NetworkInformation;
-using System.Runtime.InteropServices;
 using Windows.ApplicationModel.Resources;
 using Windows.Foundation;
 using Windows.Graphics.Display;
@@ -23,64 +22,36 @@ namespace TestUWP
             ResourceLoader rl = ResourceLoader.GetForCurrentView();
 
             PrintInfoOperatingSystem printInfoOS = new PrintInfoOperatingSystem(rl);
+            PrintInfoHardware printInfoHw = new PrintInfoHardware(rl);
 
             // Infos système d'exploitation
-            PlatformInfos.Text += Environment.NewLine +
-                rl.GetString("PlatformInfos_OSPlatform/Text") +
-                (RuntimeInformation.IsOSPlatform(OSPlatform.Windows) ? OSPlatform.Windows.ToString() :
-                RuntimeInformation.IsOSPlatform(OSPlatform.OSX) ? OSPlatform.OSX.ToString() :
-                RuntimeInformation.IsOSPlatform(OSPlatform.Linux) ? OSPlatform.Linux.ToString() :
-                "Unknown");
+            InfoPlatform.Text += Environment.NewLine + printInfoOS.PrintOperatingSystem();
+            InfoPlatform.Text += Environment.NewLine + printInfoOS.PrintOperatingSystemVersion();
+            InfoPlatform.Text += Environment.NewLine + printInfoOS.PrintOperatingSystemArchitecture();
+            InfoPlatform.Text += Environment.NewLine + printInfoOS.PrintIfOperatingSystemIs64Bit();
+            InfoPlatform.Text += Environment.NewLine + printInfoOS.PrintDeviceFamily();
 
-            PlatformInfos.Text += Environment.NewLine +
-                rl.GetString("PlatformInfos_OSDescription/Text") + RuntimeInformation.OSDescription;
+            InfoPlatform.Text += Environment.NewLine;
 
-            PlatformInfos.Text += Environment.NewLine +
-                rl.GetString("PlatformInfos_OSArchitecture/Text") + RuntimeInformation.OSArchitecture;
+            // Infos hardware
+            InfoPlatform.Text += Environment.NewLine + printInfoHw.PrintMachineName();
+            InfoPlatform.Text += Environment.NewLine + printInfoHw.PrintDeviceManufacturer();
+            InfoPlatform.Text += Environment.NewLine + printInfoHw.PrintDeviceModel();
+            InfoPlatform.Text += Environment.NewLine + printInfoHw.PrintProcessorArchitecture();
+            InfoPlatform.Text += Environment.NewLine + printInfoHw.PrintIf64BitProcessor();
+            InfoPlatform.Text += Environment.NewLine + printInfoHw.PrintProcessorCount();
+            InfoPlatform.Text += Environment.NewLine + printInfoHw.PrintAvailableMemory();
+            InfoPlatform.Text += Environment.NewLine + printInfoHw.PrintMemoryPageSize();
+            InfoPlatform.Text += Environment.NewLine + printInfoHw.PrintPhysicalMemoryMapped();
 
-            // Infos OS UWP Toolkit
-            PlatformInfos.Text += Environment.NewLine + printInfoOS.PrintOperatingSystem();
-            PlatformInfos.Text += Environment.NewLine + printInfoOS.PrintOperatingSystemVersion();
-            PlatformInfos.Text += Environment.NewLine + printInfoOS.PrintOperatingSystemArchitecture();
-            PlatformInfos.Text += Environment.NewLine + printInfoOS.PrintIfOperatingSystemIs64Bit();
-            PlatformInfos.Text += Environment.NewLine + printInfoOS.PrintDeviceFamily();
-
-            /*
-            PlatformInfos.Text += Environment.NewLine +
-                rl.GetString("ToolkitUWP_OperatingSystem/Text") + SystemInformation.OperatingSystem;
-            PlatformInfos.Text += Environment.NewLine +
-                rl.GetString("ToolkitUWP_OperatingSystemVersion/Text") +
-                SystemInformation.OperatingSystemVersion + " (from SystemInformation) ; " +
-                Environment.OSVersion + " (from Environment)";
-            PlatformInfos.Text += Environment.NewLine +
-                rl.GetString("ToolkitUWP_OperatingSystemArchitecture/Text") + SystemInformation.OperatingSystemArchitecture;
-            PlatformInfos.Text += Environment.NewLine +
-                rl.GetString("ToolkitUWP_Is64BitOperatingSystem/Text") + Environment.Is64BitOperatingSystem;
-            PlatformInfos.Text += Environment.NewLine +
-                rl.GetString("ToolkitUWP_DeviceFamily/Text") + SystemInformation.DeviceFamily;
-            */
-
-            // Infos hardware UWP Toolkit
-            PlatformInfos.Text += Environment.NewLine +
-                rl.GetString("ToolkitUWP_Is64BitProcessor/Text") + Environment.Is64BitProcess;
-            PlatformInfos.Text += Environment.NewLine +
-                rl.GetString("ToolkitUWP_NumberProcessorCore/Text") + Environment.ProcessorCount;
-            PlatformInfos.Text += Environment.NewLine +
-                rl.GetString("ToolkitUWP_AvailableMemory/Text") + SystemInformation.AvailableMemory + " MB";
-            PlatformInfos.Text += Environment.NewLine +
-                rl.GetString("ToolkitUWP_MachineName/Text") + Environment.MachineName;
-            PlatformInfos.Text += Environment.NewLine +
-                rl.GetString("ToolkitUWP_DeviceManufacturer/Text") + SystemInformation.DeviceManufacturer;
-            PlatformInfos.Text += Environment.NewLine +
-                rl.GetString("ToolkitUWP_DeviceModel/Text") + SystemInformation.DeviceModel;
+            InfoPlatform.Text += Environment.NewLine;
 
             // Diagnostique du processus
-
-            PlatformInfos.Text += Environment.NewLine +
+            InfoPlatform.Text += Environment.NewLine +
                 rl.GetString("ResourcesUsage/Text") + ProcessDiagnosticInfo.GetForCurrentProcess().CpuUsage.GetReport();
-            PlatformInfos.Text += Environment.NewLine +
+            InfoPlatform.Text += Environment.NewLine +
                 rl.GetString("ResourcesUsage/Text") + ProcessDiagnosticInfo.GetForCurrentProcess().MemoryUsage.GetReport();
-            PlatformInfos.Text += Environment.NewLine +
+            InfoPlatform.Text += Environment.NewLine +
                 rl.GetString("ResourcesUsage/Text") + ProcessDiagnosticInfo.GetForCurrentProcess().DiskUsage.GetReport();
 
             // Récupération des informations sur l'écran
@@ -98,23 +69,23 @@ namespace TestUWP
             DisplayOrientations displayNativeOrientation = DisplayInformation.GetForCurrentView().NativeOrientation;
             DisplayOrientations displayCurrentOrientation = DisplayInformation.GetForCurrentView().CurrentOrientation;
 
-            ScreenInfos.Text = rl.GetString("ScreenInfos_Size/Text") + screenSize_Pixels.Width + " × " + screenSize_Pixels.Height;
-            ScreenInfos.Text +=
-                Environment.NewLine + rl.GetString("ScreenInfos_PpiX/Text") + rawDpiX +
-                Environment.NewLine + rl.GetString("ScreenInfos_PpiY/Text") + rawDpiY;
+            InfoScreen.Text = rl.GetString("InfoScreen_Size/Text") + screenSize_Pixels.Width + " × " + screenSize_Pixels.Height;
+            InfoScreen.Text +=
+                Environment.NewLine + rl.GetString("InfoScreen_PpiX/Text") + rawDpiX +
+                Environment.NewLine + rl.GetString("InfoScreen_PpiY/Text") + rawDpiY;
 
-            ScreenInfos.Text += Environment.NewLine +
-                rl.GetString("ScreenInfos_Scale/Text") + resolutionScale;
+            InfoScreen.Text += Environment.NewLine +
+                rl.GetString("InfoScreen_Scale/Text") + resolutionScale;
 
-            ScreenInfos.Text += Environment.NewLine +
-                rl.GetString("ScreenInfos_NativeOrientation/Text") + displayNativeOrientation;
-            ScreenInfos.Text += Environment.NewLine +
-                rl.GetString("ScreenInfos_CurrentOrientation/Text") + displayCurrentOrientation;
+            InfoScreen.Text += Environment.NewLine +
+                rl.GetString("InfoScreen_NativeOrientation/Text") + displayNativeOrientation;
+            InfoScreen.Text += Environment.NewLine +
+                rl.GetString("InfoScreen_CurrentOrientation/Text") + displayCurrentOrientation;
 
             // Connexion réseau/Internet
             bool isNetworkAvailable = NetworkInterface.GetIsNetworkAvailable();
 
-            NetworkInfos.Text = rl.GetString("NetworkInfos_IsAvailable/Text") + isNetworkAvailable;
+            InfoNetwork.Text = rl.GetString("InfoNetwork_IsAvailable/Text") + isNetworkAvailable;
 
             // Voir aussi : connexion limitée ? Type de co (Ethernet, Wi-Fi, 4G, etc.) ?
 
@@ -122,7 +93,7 @@ namespace TestUWP
             TimeSpan timeSpendSinceStart = getTimeSpendSinceStart(); // Jours, heures, minutes, secondes, millisecondes
             DateTime startDate = DateTime.Now - timeSpendSinceStart; // Année, mois, jours, heures, minutes, secondes, millisecondes
 
-            OthersInfos.Text =
+            InfoOthers.Text =
                 rl.GetString("Others_SystemStartDate/Text") +
                 startDate +
                 Environment.NewLine +

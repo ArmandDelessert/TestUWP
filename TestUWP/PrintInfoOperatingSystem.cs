@@ -14,62 +14,57 @@ namespace TestUWP
 
         public string PrintOperatingSystem()
         {
-            switch (InfoOperatingSystem.GetOSPlatform().ToString())
+            switch (InfoOperatingSystem.GetOperatingSystem())
             {
                 case "WINDOWS":
-                    return rl.GetString("ToolkitUWP_OperatingSystem/Text") + 
-                        "Windows";
+                    return rl.GetString("InfoPlatform_OperatingSystem/Text") + "Windows";
                 case "OSX":
-                    return rl.GetString("ToolkitUWP_OperatingSystem/Text") + 
-                        "macOS";
+                    return rl.GetString("InfoPlatform_OperatingSystem/Text") + "macOS";
                 case "LINUX":
-                    return rl.GetString("ToolkitUWP_OperatingSystem/Text") + 
-                        "Linux";
+                    return rl.GetString("InfoPlatform_OperatingSystem/Text") + "Linux";
             }
 
-            return rl.GetString("ToolkitUWP_OperatingSystem/Text") +
+            return rl.GetString("InfoPlatform_OperatingSystem/Text") +
                 InfoOperatingSystem.GetOperatingSystem();
         }
 
         public string PrintOperatingSystemVersion()
         {
-            return rl.GetString("ToolkitUWP_OperatingSystemVersion/Text") +
+            return rl.GetString("InfoPlatform_OperatingSystemVersion/Text") +
                 InfoOperatingSystem.GetOperatingSystemVersion_FromSysInf();
         }
 
         public string PrintOperatingSystemArchitecture()
         {
+            string baseString = rl.GetString("InfoPlatform_OperatingSystemArchitecture/Text");
+
             switch (InfoOperatingSystem.GetOSArchitecture())
             {
                 case Architecture.X86:
-                    return rl.GetString("ToolkitUWP_OperatingSystemArchitecture/Text") +
-                        "Intel-based 32-bit processor architecture";
+                    return baseString + rl.GetString("InfoPlatform_OperatingSystemArchitecture_X86/Text");
                 case Architecture.X64:
-                    return rl.GetString("ToolkitUWP_OperatingSystemArchitecture/Text") +
-                        "Intel-based 64-bit processor architecture";
+                    return baseString + rl.GetString("InfoPlatform_OperatingSystemArchitecture_X64/Text");
                 case Architecture.Arm:
-                    return rl.GetString("ToolkitUWP_OperatingSystemArchitecture/Text") +
-                        "32-bit ARM processor architecture";
+                    return baseString + rl.GetString("InfoPlatform_OperatingSystemArchitecture_Arm/Text");
                 case Architecture.Arm64:
-                    return rl.GetString("ToolkitUWP_OperatingSystemArchitecture/Text") +
-                        "64-bit ARM processor architecture";
+                    return baseString + rl.GetString("InfoPlatform_OperatingSystemArchitecture_Arm64/Text");
             }
 
-            return InfoOperatingSystem.GetOSArchitecture().ToString();
+            return baseString + InfoOperatingSystem.GetOSArchitecture().ToString();
         }
 
         public string PrintIfOperatingSystemIs64Bit()
         {
             if (InfoOperatingSystem.Is64BitOperatingSystem())
-                return rl.GetString("ToolkitUWP_OperatingSystem64Bit/Text");
+                return rl.GetString("InfoPlatform_OperatingSystemIs64Bit/Text");
             else
-                return rl.GetString("ToolkitUWP_OperatingSystemNon64Bit/Text");
+                return rl.GetString("InfoPlatform_OperatingSystemIsNot64Bit/Text");
         }
 
         public string PrintDeviceFamily()
         {
-            return rl.GetString("ToolkitUWP_DeviceFamily/Text") +
-                InfoOperatingSystem.GetDeviceFamily();
+            return rl.GetString("InfoPlatform_DeviceFamily/Text") +
+                InfoOperatingSystem.GetDeviceFamily().Replace('.', ' ');
         }
     }
 }

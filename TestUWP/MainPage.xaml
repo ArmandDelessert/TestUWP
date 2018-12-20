@@ -23,16 +23,16 @@
 
         <Pivot Title="Some infos…">
             <PivotItem Header="Platform Infos">
-                <TextBlock Name="PlatformInfos" x:Uid="PlatformInfos" Margin="4,0,4,0"/>
+                <TextBlock Name="InfoPlatform" x:Uid="PlatformInfos" Margin="4,0,4,0"/>
             </PivotItem>
             <PivotItem Header="Screen Infos">
-                <TextBlock Name="ScreenInfos" x:Uid="ScreenInfos" Margin="4,0,4,0"/>
+                <TextBlock Name="InfoScreen" x:Uid="ScreenInfos" Margin="4,0,4,0"/>
             </PivotItem>
             <PivotItem Header="Network Infos">
-                <TextBlock Name="NetworkInfos" x:Uid="NetworkInfos" Margin="4,0,4,0"/>
+                <TextBlock Name="InfoNetwork" x:Uid="NetworkInfos" Margin="4,0,4,0"/>
             </PivotItem>
             <PivotItem Header="Others Infos">
-                <TextBlock Name="OthersInfos" x:Uid="OthersInfos" Margin="4,0,4,0"/>
+                <TextBlock Name="InfoOthers" x:Uid="OthersInfos" Margin="4,0,4,0"/>
             </PivotItem>
         </Pivot>
 
