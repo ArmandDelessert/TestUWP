@@ -23,7 +23,9 @@
 
         <Pivot Title="Some infos…">
             <PivotItem Header="Platform Infos">
-                <TextBlock Name="InfoPlatform" x:Uid="PlatformInfos" Margin="4,0,4,0"/>
+                <TextBox Name="InfoPlatform" x:Uid="PlatformInfos"
+                         BorderThickness="0" Background="Transparent"
+                         IsReadOnly="True" TextWrapping="Wrap" Margin="4,0,4,0"/>
             </PivotItem>
             <PivotItem Header="Screen Infos">
                 <TextBlock Name="InfoScreen" x:Uid="ScreenInfos" Margin="4,0,4,0"/>

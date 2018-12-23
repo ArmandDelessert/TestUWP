@@ -177,7 +177,7 @@
   <data name="InfoScreen_PpiY.Text" xml:space="preserve">
     <value>Pixel par pouce (ppp) en Y : </value>
   </data>
-  <data name="InfoScreen_Scale.Text" xml:space="preserve">
+  <data name="InfoScreen_ResolutionScale.Text" xml:space="preserve">
     <value>Échelle de résolution : </value>
   </data>
   <data name="InfoScreen_Size.Text" xml:space="preserve">
@@ -245,5 +245,8 @@
   </data>
   <data name="InfoPlatform_ProcessorArchitecture_X86.Text" xml:space="preserve">
     <value>Intel 32 bits</value>
+  </data>
+  <data name="InfoScreen_ScaleFactor.Text" xml:space="preserve">
+    <value>Facteur d'agrandissement : </value>
   </data>
 </root>

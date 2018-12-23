@@ -25,7 +25,7 @@ namespace TestUWP
             PrintInfoHardware printInfoHw = new PrintInfoHardware(rl);
 
             // Infos système d'exploitation
-            InfoPlatform.Text += Environment.NewLine + printInfoOS.PrintOperatingSystem();
+            InfoPlatform.Text += printInfoOS.PrintOperatingSystem();
             InfoPlatform.Text += Environment.NewLine + printInfoOS.PrintOperatingSystemVersion();
             InfoPlatform.Text += Environment.NewLine + printInfoOS.PrintOperatingSystemArchitecture();
             InfoPlatform.Text += Environment.NewLine + printInfoOS.PrintIfOperatingSystemIs64Bit();
@@ -48,7 +48,7 @@ namespace TestUWP
 
             // Diagnostique du processus
             InfoPlatform.Text += Environment.NewLine +
-                rl.GetString("ResourcesUsage/Text") + ProcessDiagnosticInfo.GetForCurrentProcess().CpuUsage.GetReport();
+                rl.GetString("ResourcesUsage/Text") + ProcessDiagnosticInfo.GetForCurrentProcess().CpuUsage.GetReport().KernelTime;
             InfoPlatform.Text += Environment.NewLine +
                 rl.GetString("ResourcesUsage/Text") + ProcessDiagnosticInfo.GetForCurrentProcess().MemoryUsage.GetReport();
             InfoPlatform.Text += Environment.NewLine +

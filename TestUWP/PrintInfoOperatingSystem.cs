@@ -5,7 +5,7 @@ namespace TestUWP
 {
     class PrintInfoOperatingSystem
     {
-        private ResourceLoader rl;
+        private readonly ResourceLoader rl;
 
         public PrintInfoOperatingSystem(ResourceLoader rl)
         {

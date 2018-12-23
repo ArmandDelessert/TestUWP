@@ -103,6 +103,7 @@
     <Compile Include="InfoOperatingSystem.cs" />
     <Compile Include="PrintInfoHardware.cs" />
     <Compile Include="PrintInfoOperatingSystem.cs" />
+    <Compile Include="PrintInfoScreen.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
