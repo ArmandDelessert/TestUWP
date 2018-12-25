@@ -3,7 +3,7 @@ using Windows.System;
 
 namespace TestUWP
 {
-    class PrintInfoHardware
+    public class PrintInfoHardware
     {
         private readonly ResourceLoader rl;
 

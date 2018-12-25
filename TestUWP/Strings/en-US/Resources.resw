@@ -246,4 +246,7 @@
   <data name="InfoPlatform_ProcessorIsNot64Bit.Text" xml:space="preserve">
     <value>32 bit processor</value>
   </data>
+  <data name="InfoScreen_ResolutionScale_Invalid.Text" xml:space="preserve">
+    <value>Invalid value</value>
+  </data>
 </root>

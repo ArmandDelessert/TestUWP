@@ -5,6 +5,7 @@ using System.Net.NetworkInformation;
 using Windows.ApplicationModel.Resources;
 using Windows.Foundation;
 using Windows.Graphics.Display;
+using Windows.Networking.Connectivity;
 using Windows.System.Diagnostics;
 using Windows.UI.Xaml.Controls;
 
@@ -23,9 +24,11 @@ namespace TestUWP
 
             PrintInfoOperatingSystem printInfoOS = new PrintInfoOperatingSystem(rl);
             PrintInfoHardware printInfoHw = new PrintInfoHardware(rl);
+            PrintInfoScreen printInfoScreen = new PrintInfoScreen(rl);
+            PrintInfoNetwork printInfoNetwork = new PrintInfoNetwork(rl);
 
             // Infos système d'exploitation
-            InfoPlatform.Text += printInfoOS.PrintOperatingSystem();
+            InfoPlatform.Text = printInfoOS.PrintOperatingSystem();
             InfoPlatform.Text += Environment.NewLine + printInfoOS.PrintOperatingSystemVersion();
             InfoPlatform.Text += Environment.NewLine + printInfoOS.PrintOperatingSystemArchitecture();
             InfoPlatform.Text += Environment.NewLine + printInfoOS.PrintIfOperatingSystemIs64Bit();
@@ -44,7 +47,7 @@ namespace TestUWP
             InfoPlatform.Text += Environment.NewLine + printInfoHw.PrintMemoryPageSize();
             InfoPlatform.Text += Environment.NewLine + printInfoHw.PrintPhysicalMemoryMapped();
 
-            InfoPlatform.Text += Environment.NewLine;
+            InfoPlatform.Text += Environment.NewLine + ".";
 
             // Diagnostique du processus
             InfoPlatform.Text += Environment.NewLine +
@@ -55,39 +58,15 @@ namespace TestUWP
                 rl.GetString("ResourcesUsage/Text") + ProcessDiagnosticInfo.GetForCurrentProcess().DiskUsage.GetReport();
 
             // Récupération des informations sur l'écran
-            Size screenSize_Pixels = new Size
-            {
-                Width = DisplayInformation.GetForCurrentView().ScreenWidthInRawPixels,
-                Height = DisplayInformation.GetForCurrentView().ScreenHeightInRawPixels
-            };
-
-            double scaleFactor = DisplayInformation.GetForCurrentView().RawPixelsPerViewPixel;
-
-            float rawDpiX = DisplayInformation.GetForCurrentView().RawDpiX;
-            float rawDpiY = DisplayInformation.GetForCurrentView().RawDpiY;
-            ResolutionScale resolutionScale = DisplayInformation.GetForCurrentView().ResolutionScale;
-            DisplayOrientations displayNativeOrientation = DisplayInformation.GetForCurrentView().NativeOrientation;
-            DisplayOrientations displayCurrentOrientation = DisplayInformation.GetForCurrentView().CurrentOrientation;
-
-            InfoScreen.Text = rl.GetString("InfoScreen_Size/Text") + screenSize_Pixels.Width + " × " + screenSize_Pixels.Height;
-            InfoScreen.Text +=
-                Environment.NewLine + rl.GetString("InfoScreen_PpiX/Text") + rawDpiX +
-                Environment.NewLine + rl.GetString("InfoScreen_PpiY/Text") + rawDpiY;
-
-            InfoScreen.Text += Environment.NewLine +
-                rl.GetString("InfoScreen_Scale/Text") + resolutionScale;
-
-            InfoScreen.Text += Environment.NewLine +
-                rl.GetString("InfoScreen_NativeOrientation/Text") + displayNativeOrientation;
-            InfoScreen.Text += Environment.NewLine +
-                rl.GetString("InfoScreen_CurrentOrientation/Text") + displayCurrentOrientation;
+            InfoScreen.Text = printInfoScreen.PrintScreenSize();
+            InfoScreen.Text += Environment.NewLine + printInfoScreen.PrintRawDpi();
+            InfoScreen.Text += Environment.NewLine + printInfoScreen.PrintScaleFactor();
+            InfoScreen.Text += Environment.NewLine + printInfoScreen.PrintResolutionScale();
+            InfoScreen.Text += Environment.NewLine + printInfoScreen.PrintDisplayNativeOrientation();
+            InfoScreen.Text += Environment.NewLine + printInfoScreen.PrintDisplayCurrentOrientation();
 
             // Connexion réseau/Internet
-            bool isNetworkAvailable = NetworkInterface.GetIsNetworkAvailable();
-
-            InfoNetwork.Text = rl.GetString("InfoNetwork_IsAvailable/Text") + isNetworkAvailable;
-
-            // Voir aussi : connexion limitée ? Type de co (Ethernet, Wi-Fi, 4G, etc.) ?
+            InfoNetwork.Text = printInfoNetwork.PrintIfNetworkAvailable();
 
             // Autres infos
             TimeSpan timeSpendSinceStart = getTimeSpendSinceStart(); // Jours, heures, minutes, secondes, millisecondes

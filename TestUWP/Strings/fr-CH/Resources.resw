@@ -249,4 +249,7 @@
   <data name="InfoScreen_ScaleFactor.Text" xml:space="preserve">
     <value>Facteur d'agrandissement : </value>
   </data>
+  <data name="InfoScreen_ResolutionScale_Invalid.Text" xml:space="preserve">
+    <value>Valeur invalide</value>
+  </data>
 </root>
