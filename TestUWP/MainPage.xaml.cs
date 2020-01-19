@@ -2,6 +2,7 @@
 using Microsoft.Toolkit.Uwp.Helpers;
 using System;
 using System.Net.NetworkInformation;
+using TestUWP.PrintInfos;
 using Windows.ApplicationModel.Resources;
 using Windows.Foundation;
 using Windows.Graphics.Display;
@@ -51,11 +52,11 @@ namespace TestUWP
 
             // Diagnostique du processus
             InfoPlatform.Text += Environment.NewLine +
-                rl.GetString("ResourcesUsage/Text") + ProcessDiagnosticInfo.GetForCurrentProcess().CpuUsage.GetReport().KernelTime;
+                rl.GetString("ResourcesUsage/Text") + ProcessDiagnosticInfo.GetForCurrentProcess().CpuUsage.GetReport().KernelTime + " (KernelTime)";
             InfoPlatform.Text += Environment.NewLine +
-                rl.GetString("ResourcesUsage/Text") + ProcessDiagnosticInfo.GetForCurrentProcess().MemoryUsage.GetReport();
+                rl.GetString("ResourcesUsage/Text") + ProcessDiagnosticInfo.GetForCurrentProcess().MemoryUsage.GetReport().VirtualMemorySizeInBytes /(2^30) + " GB (VirtualMemorySizeInBytes)";
             InfoPlatform.Text += Environment.NewLine +
-                rl.GetString("ResourcesUsage/Text") + ProcessDiagnosticInfo.GetForCurrentProcess().DiskUsage.GetReport();
+                rl.GetString("ResourcesUsage/Text") + ProcessDiagnosticInfo.GetForCurrentProcess().DiskUsage.GetReport().BytesReadCount + " (BytesReadCount)";
 
             // Récupération des informations sur l'écran
             InfoScreen.Text = printInfoScreen.PrintScreenSize();
@@ -67,6 +68,8 @@ namespace TestUWP
 
             // Connexion réseau/Internet
             InfoNetwork.Text = printInfoNetwork.PrintIfNetworkAvailable();
+            InfoNetwork.Text += Environment.NewLine + printInfoNetwork.PrintNetworkConnectivityLevel();
+            InfoNetwork.Text += Environment.NewLine + printInfoNetwork.PrintNetworkCostType();
 
             // Autres infos
             TimeSpan timeSpendSinceStart = getTimeSpendSinceStart(); // Jours, heures, minutes, secondes, millisecondes
