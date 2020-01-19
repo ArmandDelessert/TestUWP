@@ -1,7 +1,7 @@
 ﻿using Windows.Foundation;
 using Windows.Graphics.Display;
 
-namespace TestUWP
+namespace TestUWP.GetInfos
 {
     /// <summary>
     /// This class provides information about the screen.

@@ -2,7 +2,7 @@
 using System;
 using System.Runtime.InteropServices;
 
-namespace TestUWP
+namespace TestUWP.GetInfos
 {
     /// <summary>
     /// This class provides information about the operating system.

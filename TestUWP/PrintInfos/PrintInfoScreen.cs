@@ -1,8 +1,9 @@
 ﻿using System;
+using TestUWP.GetInfos;
 using Windows.ApplicationModel.Resources;
 using Windows.Graphics.Display;
 
-namespace TestUWP
+namespace TestUWP.PrintInfos
 {
     public class PrintInfoScreen
     {

@@ -2,7 +2,7 @@
 using System;
 using Windows.System;
 
-namespace TestUWP
+namespace TestUWP.GetInfos
 {
     /// <summary>
     /// This class provides information about the hardware of the machine.

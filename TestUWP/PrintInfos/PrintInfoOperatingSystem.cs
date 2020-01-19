@@ -1,7 +1,8 @@
 ﻿using System.Runtime.InteropServices;
+using TestUWP.GetInfos;
 using Windows.ApplicationModel.Resources;
 
-namespace TestUWP
+namespace TestUWP.PrintInfos
 {
     public class PrintInfoOperatingSystem
     {
@@ -14,14 +15,16 @@ namespace TestUWP
 
         public string PrintOperatingSystem()
         {
+            string baseString = rl.GetString("InfoPlatform_OperatingSystem/Text");
+
             switch (InfoOperatingSystem.GetOperatingSystem())
             {
                 case "WINDOWS":
-                    return rl.GetString("InfoPlatform_OperatingSystem/Text") + "Windows";
+                    return baseString + "Windows";
                 case "OSX":
-                    return rl.GetString("InfoPlatform_OperatingSystem/Text") + "macOS";
+                    return baseString + "macOS";
                 case "LINUX":
-                    return rl.GetString("InfoPlatform_OperatingSystem/Text") + "Linux";
+                    return baseString + "Linux";
             }
 
             return rl.GetString("InfoPlatform_OperatingSystem/Text") +

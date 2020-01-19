@@ -1,7 +1,8 @@
-﻿using Windows.ApplicationModel.Resources;
+﻿using TestUWP.GetInfos;
+using Windows.ApplicationModel.Resources;
 using Windows.Networking.Connectivity;
 
-namespace TestUWP
+namespace TestUWP.PrintInfos
 {
     public class PrintInfoNetwork
     {

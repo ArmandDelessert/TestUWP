@@ -1,7 +1,8 @@
-﻿using Windows.ApplicationModel.Resources;
+﻿using TestUWP.GetInfos;
+using Windows.ApplicationModel.Resources;
 using Windows.System;
 
-namespace TestUWP
+namespace TestUWP.PrintInfos
 {
     public class PrintInfoHardware
     {
@@ -26,7 +27,7 @@ namespace TestUWP
 
         public string PrintDeviceModel()
         {
-            return rl.GetString("InfoPlatform_DeviceModel/Text") + 
+            return rl.GetString("InfoPlatform_DeviceModel/Text") +
                 InfoHardware.GetDeviceModel();
         }
 

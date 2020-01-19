@@ -1,7 +1,7 @@
 ﻿using System.Net.NetworkInformation;
 using Windows.Networking.Connectivity;
 
-namespace TestUWP
+namespace TestUWP.GetInfos
 {
     public static class InfoNetwork
     {

@@ -95,17 +95,17 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="InfoHardware.cs" />
-    <Compile Include="InfoNetwork.cs" />
-    <Compile Include="InfoScreen.cs" />
+    <Compile Include="GetInfos\InfoHardware.cs" />
+    <Compile Include="GetInfos\InfoNetwork.cs" />
+    <Compile Include="GetInfos\InfoScreen.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="InfoOperatingSystem.cs" />
-    <Compile Include="PrintInfoHardware.cs" />
-    <Compile Include="PrintInfoNetwork.cs" />
-    <Compile Include="PrintInfoOperatingSystem.cs" />
-    <Compile Include="PrintInfoScreen.cs" />
+    <Compile Include="GetInfos\InfoOperatingSystem.cs" />
+    <Compile Include="PrintInfos\PrintInfoHardware.cs" />
+    <Compile Include="PrintInfos\PrintInfoNetwork.cs" />
+    <Compile Include="PrintInfos\PrintInfoOperatingSystem.cs" />
+    <Compile Include="PrintInfos\PrintInfoScreen.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
